@@ -1,0 +1,686 @@
+/* Configurações Gerais */
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
+    scroll-padding-top: 70px; /* Espaço para o menu fixo. Ajuste se a altura do menu mudar. */
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #f4f0f8; /* Lilás bem clarinho */
+    color: #4b3f5c; /* Roxo escuro para texto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* Cabeçalho (Hero Section) */
+.hero {
+    /* Novo fundo com gradiente animado */
+    background: linear-gradient(270deg, #5c258d, #4389a2, #8c53c6, #2c3e50);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+
+    color: #fff;
+    text-align: center;
+    padding: 1rem 1rem;
+    width: 100%;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-top: 70px; /* Empurra o cabeçalho para baixo do menu fixo */
+    overflow: hidden; /* Garante que as animações não "vazem" */
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-content .slogan {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    opacity: 0; /* Começa invisível */
+    animation: fadeInUp 1s ease-out 0.5s forwards; /* Atraso de 0.5s */
+}
+
+/* Conteúdo Principal */
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo dos Cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(140, 93, 184, 0.15);
+    border-left: 5px solid #c8a2c8; /* Borda lilás */
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+.card h2 {
+    font-family: 'Cinzel', serif;
+    color: #8c53c6; /* Lilás mais forte */
+    font-size: 2rem;
+    margin-top: 0;
+    border-bottom: 2px solid #e6dcf0;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Links de Contato */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button .fab {
+    font-size: 1.2rem;
+}
+
+/* Cores dos botões */
+.whatsapp { background-color: #25D366; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.tiktok { background-color: #000000; }
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: #e6dcf0; /* Lilás bem claro */
+    color: #4b3f5c;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Estilos da Seção de Serviços */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+    box-shadow: 0 8px 25px rgba(140, 93, 184, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(140, 93, 184, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.service-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #8c53c6;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.service-card .service-description {
+    padding: 0 1.5rem;
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    font-size: 0.95rem;
+    color: #4b3f5c;
+}
+
+.service-card .service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4b3f5c;
+    margin: 1.5rem 0;
+}
+
+.service-card .service-cta {
+    background-color: #8c53c6;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.service-card .service-cta:hover {
+    background-color: #6a3a9c; /* Tom de lilás mais escuro no hover */
+}
+
+/* Estilo para o botão de CTA do WhatsApp nos cards de serviço */
+.service-cta.whatsapp-cta {
+    background-color: #25D366;
+}
+
+.service-cta.whatsapp-cta:hover {
+    background-color: #1da851;
+}
+
+/* Estilo para o card que abre a galeria */
+.gallery-trigger {
+    cursor: pointer;
+}
+
+/* Estilos para o botão secundário (CTA) */
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border: 2px solid #8c53c6;
+    border-radius: 50px;
+    color: #8c53c6;
+    background-color: rgba(140, 83, 198, 0.15); /* Lilás bem sutil */
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #8c53c6;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(140, 93, 184, 0.2);
+}
+
+/* Container do botão de Voltar (Página de Serviços) */
+.back-to-home {
+    position: sticky;
+    top: 70px; /* Altura do navbar, para colar logo abaixo dele */
+    background-color: #f4f0f8; /* Cor de fundo para não ficar transparente */
+    padding: 1rem 0;
+    z-index: 998; /* Garante que fique acima do conteúdo, mas abaixo do menu */
+    text-align: center;
+    margin-bottom: 2rem;
+    /* Adiciona uma sombra sutil para destacar quando o conteúdo rola por baixo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos da Seção FAQ */ 
+.faq-item {
+    border-bottom: 1px solid #e6dcf0;
+    padding: 1rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+details {
+    font-size: 1rem;
+}
+
+summary {
+    font-weight: 600;
+    color: #4b3f5c;
+    cursor: pointer;
+    list-style: none; /* Remove o marcador padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::after {
+    content: '\002B'; /* Símbolo de '+' */
+    font-size: 1.5rem;
+    color: #8c53c6;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg); /* Gira o '+' para parecer um 'x' */
+}
+
+details p {
+    padding-top: 1rem;
+    margin: 0;
+}
+
+/* Animação de Scroll */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos da Seção de Depoimentos */
+.testimonials-container {
+    display: grid;
+    /* Cria colunas que se ajustam automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-item {
+    background-color: #f4f0f8; /* Mesmo lilás clarinho do fundo */
+    border-radius: 20px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 4px solid #8c53c6; /* Lilás mais forte */
+    box-shadow: 0 4px 15px rgba(140, 93, 184, 0.08);
+}
+
+.testimonial-item blockquote {
+    margin: 0 0 1rem 0;
+    font-style: italic;
+    color: #4b3f5c;
+    flex-grow: 1; /* Garante que o texto ocupe o espaço disponível */
+}
+
+.testimonial-item blockquote img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    display: block; /* Remove espaços extras que a imagem possa ter */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+}
+
+.testimonial-item cite {
+    font-weight: 700;
+    color: #8c53c6;
+    text-align: right;
+    font-style: normal;
+}
+
+/* Estilo para imagem clicável */
+.clickable-image {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+/* Estilos do Modal/Lightbox */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* O display é alterado para 'flex' via JS para centralizar o conteúdo quando ativado */
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: zoomIn 0.5s;
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+}
+
+/* Estilos do Modal de Galeria */
+.gallery-content {
+    background-color: #f4f0f8;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    animation: zoomIn 0.5s;
+}
+
+.gallery-content h2 {
+    font-family: 'Cinzel', serif;
+    color: #8c53c6;
+    margin-top: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna por padrão */
+    gap: 2rem; /* Espaçamento entre os itens */
+    margin-top: 2rem;
+}
+
+/* Estilo para os pares de imagens */
+.gallery-image-pair, .gallery-image-single {
+    position: relative; /* Necessário para o pseudo-elemento */
+    border: 2px dashed #c8a2c8; /* Borda lilás para agrupar */
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem; /* Espaço interno, com mais espaço no topo */
+    margin-top: 1rem; /* Espaço para o texto acima */
+    border-radius: 20px;
+    display: flex; /* Adicionado para alinhar o botão */
+    flex-direction: column; /* Adicionado para alinhar o botão */
+}
+
+/* Adiciona o texto "Tiragem Complementar" acima do par */
+.gallery-image-pair > .image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.gallery-image-pair::before {
+    content: 'Tiragem Única';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f4f0f8; /* Cor de fundo do modal para criar um recorte na borda */
+    color: #8c53c6;
+    padding: 0 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Adiciona o texto "Tiragem Única" acima da imagem individual */
+.gallery-image-single::before {
+    content: 'Tiragem Única';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f4f0f8; /* Cor de fundo do modal para criar um recorte na borda */
+    color: #8c53c6;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Estilo geral para todas as imagens na galeria (individuais e em pares) */
+.gallery-image-single img, .gallery-image-pair .image-container img {
+    width: 100%;
+    height: auto; /* Altura automática para manter a proporção */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 10px; /* Adiciona cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+}
+
+
+/* Efeito de hover para todas as imagens */
+.gallery-image-single img:hover, .gallery-image-pair .image-container img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo do botão de agendamento na galeria */
+.gallery-book-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #25D366;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1.5rem; /* Espaço entre a imagem e o botão */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.gallery-book-button:hover {
+    background-color: #1da851;
+    transform: scale(1.05);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #4b3f5c; /* Cor roxa escura para o 'x' */
+    background-color: #fff; /* Fundo branco para o botão */
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%; /* Deixa o botão redondo */
+    width: 45px; /* Largura do botão */
+    height: 45px; /* Altura do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Garante alinhamento vertical do 'x' */
+    z-index: 1001; /* Garante que o botão fique acima do conteúdo da galeria */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    background-color: #e6dcf0; /* Fundo lilás claro no hover */
+    color: #4b3f5c;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 700px) {
+    .modal-content {
+        width: 95%;
+    }
+}
+
+/* Estilos do Menu de Navegação */
+.navbar {
+    background: rgba(26, 18, 36, 0.85); /* Roxo bem escuro e semitransparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(10px);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.menu-icon {
+    display: none; /* Esconde o ícone do menu em telas grandes */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-item {
+    height: 70px;
+}
+
+.nav-link {
+    color: #f4f0f8;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    gap: 0.5rem; /* Espaçamento entre o ícone e o texto */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    height: 100%;
+    transition: color 0.3s ease, background-color 0.4s ease; /* Transição suave para cor e fundo */
+}
+
+.nav-link:hover {
+    /* Ilumina o fundo com um lilás sutil */
+    background-color: rgba(200, 162, 200, 0.15);
+    color: #fff; /* Garante que o texto fique branco e nítido */
+}
+
+/* Keyframes para as animações */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 800px) {
+    .navbar-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        position: absolute;
+        top: 70px;
+        left: -100%; /* Começa fora da tela */
+        width: 100%;
+        background: rgba(26, 18, 36, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 2rem 0;
+        transition: left 0.4s ease-in-out;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Traz o menu para a tela */
+    }
+
+    .nav-item {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra o ícone do menu */
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: #fff;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content .slogan {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        margin-top: 60px; /* Ajusta o espaçamento para a altura do menu em mobile */
+        padding: 2rem 1rem;
+    }
+
+    /* Ajustes para a galeria no mobile */
+    .gallery-content {
+        padding: 1rem; /* Diminui o padding do modal */
+    }
+
+    .gallery-image-pair, .gallery-image-single {
+        padding: 0.8rem 0.3rem 0.3rem 0.3rem; /* Diminui o padding dos containers de imagem */
+    }
+
+    /* Faz as imagens complementares ficarem uma embaixo da outra no mobile */
+    .gallery-image-pair > .image-container {
+        grid-template-columns: 1fr;
+    }
+}
