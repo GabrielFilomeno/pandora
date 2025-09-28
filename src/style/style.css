@@ -270,6 +270,11 @@ summary {
     align-items: center;
 }
 
+/* Remove a seta padrão do <details> no Safari (iOS) */
+summary::-webkit-details-marker {
+    display: none;
+}
+
 summary::after {
     content: '\002B'; /* Símbolo de '+' */
     font-size: 1.5rem;
@@ -483,7 +488,7 @@ details p {
 }
 
 .close-modal {
-    position: absolute;
+    position: fixed; /* Alterado de 'absolute' para 'fixed' */
     top: 20px;
     right: 20px;
     color: #4b3f5c; /* Cor roxa escura para o 'x' */
