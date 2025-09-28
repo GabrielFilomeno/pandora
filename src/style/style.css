@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     line-height: 1.6;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
 }
 
 /* Cabeçalho (Hero Section) */
@@ -385,6 +386,7 @@ details p {
     width: 90%;
     max-width: 900px;
     max-height: 90vh;
+    overflow-x: hidden; /* Impede a rolagem horizontal dentro do modal */
     overflow-y: auto;
     text-align: center;
     animation: zoomIn 0.5s;
